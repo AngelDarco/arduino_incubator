@@ -40,7 +40,7 @@
             color: rgba(153, 255, 0, 0.856);
             padding: 3px;
             word-wrap: break-word;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
 
 
@@ -52,17 +52,35 @@
 
     <div class="contenedor">
         <div class="code">
+
         </div>
     </div>
 
     <script >
         document.addEventListener('DOMContentLoaded',()=>{
-                      
-            const code = document.querySelector('.code');
+            const D = document;
+            const CODE = D.querySelector('.code');
 
 
-    
-    })
+            let array = ['W','E','l','C','O','M','E'];
+            let contador = 0;
+
+
+            let inter = setInterval(() => {
+                
+                CODE.innerHTML += array[contador];
+                if(array.length <= contador+1 ){
+                    clearInterval(inter);
+                }
+                contador++;
+                console.log(contador);
+
+            }, 1000);
+            
+
+            console.log(contador);
+
+        })
 
 
 
