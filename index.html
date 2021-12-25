@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            background-color: #222;
+        }
+
+        .contenedor{
+            width: 250px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+            background-image: url('img.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .contenedor:hover{
+            animation: rotacion 5s ease infinite;
+        }
+
+        @keyframes rotacion{
+            0%{transform: rotateY(360deg);}
+            100%{transform: rotateY(-360deg);}
+        }
+
+        .code{
+            width: 80%;
+            height: 50%;
+            background: #0000;
+            color: rgba(153, 255, 0, 0.856);
+            padding: 3px;
+            word-wrap: break-word;
+            /* overflow: hidden; */
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="code">
+        </div>
+    </div>
+
+    <script >
+        document.addEventListener('DOMContentLoaded',()=>{
+                      
+            const code = document.querySelector('.code');
+
+
+    
+    })
+
+
+
+    </script>
+</body>
+</html>
