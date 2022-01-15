@@ -24,19 +24,35 @@ export const Header = () => {
                     </ul>
 
                     <ul className="pages">Js
-
+                        <ul className="link" >
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/book_cover/index.html">Book Cover</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/climbing_cube/index.html">Climbing Cube</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/cursor_effect/index.html">Cursor Effect</a>
+                        </ul>
                     </ul>
 
                     <ul className="pages">Html
-
+                        <ul className="link" >
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/book_cover/index.html">Book Cover</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/climbing_cube/index.html">Climbing Cube</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/cursor_effect/index.html">Cursor Effect</a>
+                        </ul>
                     </ul>
 
                     <ul className="pages">Php
-
+                        <ul className="link" >
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/book_cover/index.html">Book Cover</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/climbing_cube/index.html">Climbing Cube</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/cursor_effect/index.html">Cursor Effect</a>
+                        </ul>
                     </ul>
 
                     <ul className="pages">React
-
+                        <ul className="link" >
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/book_cover/index.html">Book Cover</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/climbing_cube/index.html">Climbing Cube</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/cursor_effect/index.html">Cursor Effect</a>
+                        </ul>
                     </ul>
 
                 </ul>
