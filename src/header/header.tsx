@@ -25,9 +25,9 @@ export const Header = () => {
 
                     <ul className="pages">Js
                         <ul className="link" >
-                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/book_cover/index.html">Book Cover</a>
-                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/climbing_cube/index.html">Climbing Cube</a>
-                            <a href="http://darcocorporation.scienceontheweb.net/pages/css/cursor_effect/index.html">Cursor Effect</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/js/timer/index.html">Timer</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/js/calculator/index.html">Calculator</a>
+                            <a href="http://darcocorporation.scienceontheweb.net/pages/js/particles/index.html">Particles Effect</a>
                         </ul>
                     </ul>
 
