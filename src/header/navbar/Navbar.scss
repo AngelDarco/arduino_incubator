@@ -28,7 +28,7 @@
     .title{
           height: 100%;
             h1{
-                border-bottom: 1px solid #53ebde;
+                border-bottom: 1px solid #000000;
                 position: relative;
                 top: 0;
                 left: 0;
@@ -55,28 +55,21 @@
                 width: 100%;
                 justify-content: flex-start;
                 color: #ffffff;
-                .pages{
-                    @include flexcenter();
-                    align-items: flex-start;
-                    font-size: 15px;
-                    padding-right: 5%;
-                        &:hover{
-                        padding: 3%;
-                        text-transform: uppercase;
-                        border-bottom: 2px solid #c5ec18;
-                        text-shadow: 0 0 5px #3cff00,
-                                    0 0 10px #3cff00,
-                                    0 0 15px #3cff00
-                        } 
                     .link{
                         @include flexcenter();
-                        width: auto;
-                        margin-top: 3%;
-                        position: absolute;
-                        display: flex;
-                        flex-flow: column;
+                            align-items: flex-start;
+                            font-size: 15px;
+                            padding-right: 5%;
+                                &:hover{
+                                padding: 3%;
+                                text-transform: uppercase;
+                                border-bottom: 2px solid #c5ec18;
+                                text-shadow: 0 0 5px #3cff00,
+                                            0 0 10px #3cff00,
+                                            0 0 15px #3cff00
+                                } 
+        
                         a{
-                            visibility: hidden;
                             padding: 5% 0;
                             text-decoration: none;
                             background: transparent;
@@ -84,9 +77,9 @@
                             &:hover{
                                 text-shadow: 0 0 5px #ff00d4,
                             }
-                        }
+                        } 
                     }
                 }
         } 
     }
-  }
+  //}

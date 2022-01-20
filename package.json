@@ -43,6 +43,7 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2",
     "webpack-merge": "^5.8.0",
-    "webpack-php-loader": "^0.5.0"
+    "webpack-php-loader": "^0.5.0",
+    "wouter": "^2.8.0-alpha.2"
   }
 }
