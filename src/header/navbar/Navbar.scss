@@ -50,7 +50,7 @@
       .links{
           @include flexcenter();
           width: 40%;
-            .ul__pages{
+            nav{
                 @include flexcenter();
                 width: 100%;
                 justify-content: flex-start;
@@ -60,6 +60,8 @@
                             align-items: flex-start;
                             font-size: 15px;
                             padding-right: 5%;
+                            text-decoration: none;
+                            color: #ffffff;
                                 &:hover{
                                 padding: 3%;
                                 text-transform: uppercase;
@@ -68,18 +70,7 @@
                                             0 0 10px #3cff00,
                                             0 0 15px #3cff00
                                 } 
-        
-                        a{
-                            padding: 5% 0;
-                            text-decoration: none;
-                            background: transparent;
-                            color: inherit;
-                            &:hover{
-                                text-shadow: 0 0 5px #ff00d4,
-                            }
-                        } 
                     }
                 }
         } 
     }
-  //}

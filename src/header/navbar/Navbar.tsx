@@ -20,10 +20,10 @@ const Navbar = () => {
 
             <div className="links">
                 <nav>
-                    <Link href='/html' >Html</Link>
-                    <Link href='/css'  >Css  </Link>
-                    <Link href='/js' >Js  </Link>
-                    <Link href="/php" >Php </Link>
+                    <Link className='link' href='/html' onClick={()=>{redirection()}}>Html</Link>
+                    <Link className='link' href='/css' onClick={()=>{redirection()}}>Css</Link>
+                    <Link className='link' href='/js' onClick={()=>{redirection()}}>Js</Link>
+                    <Link className='link' href="/php" onClick={()=>{redirection()}}>Php</Link>
                 </nav>
             </div>
 
@@ -32,6 +32,8 @@ const Navbar = () => {
 
     )
 }
-
+function redirection():void{
+    window.location.href = '#redirection';
+}
 export default Navbar;
 

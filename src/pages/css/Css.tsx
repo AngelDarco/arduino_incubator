@@ -1,4 +1,4 @@
-import './index.scss'
+import './Css.scss'
 
 const Css = ()=>{
     return(
