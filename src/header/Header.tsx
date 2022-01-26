@@ -1,12 +1,12 @@
-import Bottom from './bottom/Bottom';
-import Navbar from './navbar/Navbar'
+//import Bottom from './bottom/Bottom';
+import Navbar from './navbar/Navbar';
+import Main from './main/Main'
 
 const Header = ()=>{
     return(
         <div style={styles}>
             <Navbar/>
-            <Bottom/>
-            
+            <Main/>
         </div>
     )
 }

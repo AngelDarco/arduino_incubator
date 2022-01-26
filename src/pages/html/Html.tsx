@@ -3,7 +3,15 @@ import './Html.scss';
 const Html = ()=>{
     return(
     <div className="containerHtml">
-        <h1>In the Html File ...</h1>
+        <div className="frame">
+            <iframe src=""></iframe>
+        </div>
+        <div className="frame">
+            <iframe src="http://darcocorporation.scienceontheweb.net/pages/css/load_wheel/"></iframe>
+        </div>
+        <div className="frame">
+            <iframe src="http://darcocorporation.scienceontheweb.net/pages/css/load_wheel/" scrolling='no'></iframe>
+        </div>
     </div>
     )
 }
