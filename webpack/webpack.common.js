@@ -36,12 +36,11 @@ module.exports = {
         type: 'asset/inline',
       }
       
-
     ],
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
-    filename: 'bundle.js',
+    filename: 'bundle.js',    
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -49,4 +48,5 @@ module.exports = {
     }),
   ],
   stats: 'errors-only',
+  
 }

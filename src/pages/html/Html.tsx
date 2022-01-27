@@ -1,16 +1,12 @@
 import './Html.scss';
+import Images from '../../assets/videos/css/Images';
 
 const Html = ()=>{
     return(
     <div className="containerHtml">
         <div className="frame">
-            <iframe src=""></iframe>
-        </div>
-        <div className="frame">
-            <iframe src="http://darcocorporation.scienceontheweb.net/pages/css/load_wheel/"></iframe>
-        </div>
-        <div className="frame">
-            <iframe src="http://darcocorporation.scienceontheweb.net/pages/css/load_wheel/" scrolling='no'></iframe>
+           <img src={Images.book} alt="" />
+           <img src={Images.card} alt="No Image"/>
         </div>
     </div>
     )
