@@ -1,7 +1,9 @@
 .containerCss{
     width: 500x;
     height: 300px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto 1fr);
+    grid-template-rows: repeat(auto 1fr);
     align-items: center;
     justify-content: space-around;
     border: 1px solid orange;
@@ -9,5 +11,5 @@
 
 img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }

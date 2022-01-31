@@ -1,13 +1,18 @@
 import './Css.scss'
+import Images from '../../assets/videos/css/Images';
 
 const Css = () => {
     return (
-        <div className='containerCss'>
-            <div className="frame">
-                <img src="../../assets/videos/css/book.gif"></img>
+        <>
+            <div className="ContainerCss">
+                <img src={Images.book} alt="" />
+                <img src={Images.card} alt="" />
+                <img src={Images.cube} alt="" />
+                <img src={Images.earth} alt="" />
+                <img src={Images.loader} alt="" />
             </div>
                                 
-        </div>
+        </>
     )
 }
 
