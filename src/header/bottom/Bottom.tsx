@@ -1,42 +1,25 @@
 import './Bottom.scss';
-import { Switch,Route, useLocation} from 'wouter';
+import { Routes,Route, BrowserRouter} from 'react-router-dom';
 import  Html from '../../pages/html/Html';
 import  Css  from '../../pages/css/Css';
 import Php from '../../pages/php/Php';
 import Js from '../../pages/js/Js';
 
-
 const Bottom = ()=>{
 
     return(
     <div className="containerBottom" id='redirection'>
-        <Switch>
-  <Route path="/about">...</Route>
-
+      <Routes>
             
-            <Route path="/html">
-              <Html/>
-            </Route>
-  
-  
-            <Route path="/css">
-              <Css/>
-            </Route>
+            <Route path="/html" element={<Html/>} />
 
-            <Route path="/js">
-              <Js/>  
-            </Route>
+            <Route path="/css" element={<Css/>}/>
 
-
-            <Route path="/php">
-              <Php/>
-              </Route>
-
-              <Route path='./'>
-                  
-              </Route>
-
-</Switch>
+            <Route path="/js" element={<Js/>}/>
+                
+            <Route path="/php" element={<Php/>}/>
+              
+        </Routes>
 
     </div>
     )

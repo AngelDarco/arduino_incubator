@@ -1,4 +1,4 @@
-import { Link} from 'wouter';
+import { HashRouter, Link} from 'react-router-dom';
 import logo from '../../assets/img/icono.webp';
 
 import "./Navbar.scss";
@@ -20,10 +20,10 @@ const Navbar = () => {
 
             <div className="links">
                 <nav>
-                    <Link className='link' href='/html' onClick={()=>{redirection()}}>Html</Link>
-                    <Link className='link' href='/css' onClick={()=>{redirection()}}>Css</Link>
-                    <Link className='link' href='/js' onClick={()=>{redirection()}}>Js</Link>
-                    <Link className='link' href="/php" onClick={()=>{redirection()}}>Php</Link>
+                    <Link className='link' to='/html' onClick={()=>{redirection()}}>Html</Link>
+                    <Link className='link' to='/css' onClick={()=>{redirection()}}>Css</Link>
+                    <Link className='link' to='/js' onClick={()=>{redirection()}}>Js</Link>
+                    <Link className='link' to="/php" onClick={()=>{redirection()}}>Php</Link>
                 </nav>
             </div>
 

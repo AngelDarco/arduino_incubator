@@ -1,4 +1,3 @@
-//import Bottom from './bottom/Bottom';
 import Navbar from './navbar/Navbar';
 import Main from './main/Main'
 
