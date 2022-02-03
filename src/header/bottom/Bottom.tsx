@@ -1,5 +1,5 @@
 import './Bottom.scss';
-import { Routes,Route, BrowserRouter} from 'react-router-dom';
+import { Routes,Route} from 'react-router-dom';
 import  Html from '../../pages/html/Html';
 import  Css  from '../../pages/css/Css';
 import Php from '../../pages/php/Php';

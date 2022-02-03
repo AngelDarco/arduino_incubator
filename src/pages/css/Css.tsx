@@ -1,19 +1,21 @@
-import Images from '../../assets/videos/css/Images';
-import './Css.scss'
+import './Css.scss';
+import {CssImages, CssLinks } from '../../assets/videos/css/Images';
 
 const Css = () => {
     return (
-        <>
-            <div className="ContainerCss">
-                <div className="card"><img src={Images.book} alt="" /></div>
-                <div className="card"><img src={Images.card} alt="" /></div>
-                <div className="card"><img src={Images.cube} alt="" /></div>
-                <div className="card"><img src={Images.earth} alt="" /></div>
-                <div className="card"><img src={Images.loader} alt="" /></div>
-            </div>
-                                
-        </>
+            <div className="containerCss">
+                <div className="containerSlider">
+                    <div className="card"><img src={CssImages.book} alt="" onClick={()=>translate(CssLinks.book)} /></div>
+                    <div className="card"><img src={CssImages.card} alt="" onClick={()=>translate(CssLinks.card)}/></div>
+                    <div className="card"><img src={CssImages.cube} alt="" onClick={()=>translate(CssLinks.cube)}/></div>
+                    <div className="card"><img src={CssImages.earth} alt="" onClick={()=>translate(CssLinks.earth)}/></div>
+                    <div className="card"><img src={CssImages.loader} alt="" onClick={()=>translate(CssLinks.loader)}/></div>
+                </div>
+            </div>                   
     )
+}
+function translate(name:string):void{
+    window.open(name);
 }
 
 export default Css;
