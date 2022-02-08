@@ -13,12 +13,7 @@
         background: transparent;
         animation: translateLeft 3s ease-in-out infinite;
     }
-    .right{
-        position: absolute;
-        top: 40%;
-        left: 80%;
-        animation: translateRight 3s ease-in-out infinite;
-    }
+
     .play{
         
         animation: none;
@@ -54,11 +49,4 @@
                 
             }  
     }
-}
-
-@keyframes translateLeft{
-    to {transform: translateX(-50px);}
-}
-@keyframes translateRight{
-    to {transform: translateX(50px);}
 }

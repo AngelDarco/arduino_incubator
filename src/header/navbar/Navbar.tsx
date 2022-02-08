@@ -1,11 +1,9 @@
-import { HashRouter, Link} from 'react-router-dom';
 import logo from '../../assets/img/icono.webp';
 
 import "./Navbar.scss";
-
+import Nav from './Nav';
 
 const Navbar = () => {
-
     return (
         <div className="container" >
 
@@ -17,14 +15,8 @@ const Navbar = () => {
                 <h1>Darco Corporation</h1>
             </div>
 
-
             <div className="links">
-                <nav>
-                    <Link className='link' to='/html' onClick={()=>{redirection()}}>Html</Link>
-                    <Link className='link' to='/css' onClick={()=>{redirection()}}>Css</Link>
-                    <Link className='link' to='/js' onClick={()=>{redirection()}}>Js</Link>
-                    <Link className='link' to="/php" onClick={()=>{redirection()}}>Php</Link>
-                </nav>
+                <Nav/>
             </div>
 
         </div>
@@ -35,5 +27,8 @@ const Navbar = () => {
 function redirection():void{
     window.location.href = '#redirection';
 }
+
+
+
 export default Navbar;
 

@@ -50,11 +50,17 @@
       .links{
           @include flexcenter();
           width: 40%;
-            nav{
+            .nav{
                 @include flexcenter();
                 width: 100%;
                 justify-content: flex-start;
                 color: #ffffff;
+                border: 1px solid red;
+                .navSlide{
+                    //width: 90% !important;
+                    border: 1px solid  #3cff00;
+                    padding: 5px;
+                }
                     .link{
                         @include flexcenter();
                             align-items: flex-start;
