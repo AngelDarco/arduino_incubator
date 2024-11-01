@@ -1,6 +1,8 @@
 # Arduino Temperature and Humidity Monitoring System with Error Display
 
-![Arduino Logo](/assets/arduino.png)
+<img src="./assets/arduino-official.svg" alt="Arduino Logo" style="display: block; margin-left: auto; margin-right: auto;" >
+
+#
 
 This project is a temperature and humidity monitoring system using Arduino, DHT22 sensor, and TM1637 display. It controls a relay based on temperature thresholds and displays real-time temperature, humidity, and day counter values. In case of sensor failure, an error message is shown on the display.
 
