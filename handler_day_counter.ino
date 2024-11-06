@@ -31,6 +31,7 @@ void handler_day_counter() {
     lastIncrement = currentMillis;
 
     // Restart the Arduino board every 24 hours
+    wdt_enable(WDTO_2S);
     delay(1000);
     wdt_reset(); // Reset watchdog timer
   }
