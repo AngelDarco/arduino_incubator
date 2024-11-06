@@ -1,4 +1,5 @@
-#include <DHT.h>           // Include the DHT library
+#include <DHT.h> // Include the DHT library
+#include <DHT_U.h>
 #include <EEPROM.h>        // Include the EEPROM library
 #include <TM1637Display.h> // Include the TM1637 library
 #include <avr/wdt.h>       // Include the Watchdog timer library <avr/wdt.h>
@@ -12,19 +13,23 @@ DHT dht(DHTPIN, DHTTYPE);
 TM1637Display display(CLK, DIO);
 
 int relayPin = 8; // Relay control pin
-float tempHigh = 39;
+float tempHigh = 38;
 float tempLow = 37;
 
+unsigned long currentMillis = 0;
+
+// Read temperature in Celsius
+int temperature = NAN;
+// Read humidity
+int humidity = NAN;
+const int maxTries = 20; // Set this to your desired threshold
+// Temperature failure tries counter before enter temperature failure mode
+int tempFailCounter = 0;
+
+// Screen messages
 unsigned long lastDisplayChange = 0;
 int currentDisplay = 0;
 int dayCounter = 0;
-
-// Read temperature in Celsius
-float temperature = NAN;
-// Read humidity
-float humidity = NAN;
-unsigned long currentMillis = 0;
-
 // °C for Temperature
 const uint8_t DEGREE_C[] = {0x63, 0x39};
 // H for Humidity
@@ -32,11 +37,11 @@ const uint8_t HUMIDITY_H[] = {0x76};
 // D for Day Counter
 const uint8_t DAY_D[] = {0x5E};
 
+// Write to EEPROM every 5 minutes to store elapsed time
 // Tracks last EEPROM write for time
 unsigned long lastElapsedWrite = 0;
 // Tracks millis since last reset
 unsigned long startMillis = 0;
-
 // Start address for time storage
 int eepromStartAddress = 10;
 // Number of cells to rotate through
@@ -44,12 +49,11 @@ int numCells = 10;
 // Current EEPROM cell for time storage
 int currentCell = 0;
 
-// Temperature failure tries counter
-int tempFailCounter = 0;
-
-void handler_temperature_failure(); // Forward declaration
-void handler_screen_messages();     // Forward declaration
-void handler_day_counter();         // Forward declaration
+// Declare handler functions
+void handler_temperature_failure();       // Forward declaration
+void handler_screen_messages();           // Forward declaration
+void handler_day_counter();               // Forward declaration
+void handler_errors(uint8_t errorNumber); // Forward declaration
 
 void setup() {
   Serial.begin(9600);
@@ -62,33 +66,37 @@ void setup() {
   dayCounter = EEPROM.read(0); // Assuming we store the counter in address 0
 
   startMillis = millis();
-
-  // Enable watchdog timer with a 2-second timeout
-  wdt_enable(WDTO_2S);
 }
 
 void loop() {
   currentMillis = millis(); // Update currentMillis
 
   // Read temperature in Celsius
-  temperature = dht.readTemperature();
-  humidity = dht.readHumidity();
+  temperature = (int)dht.readTemperature();
+  humidity = (int)dht.readHumidity();
 
   // Check for DHT sensor failures
-  if ((isnan(temperature) || isnan(humidity)) && tempFailCounter < 10) {
-    Serial.println("Failed to read from DHT sensor!");
-    displayError(0x78); // ErrT
+  if ((isnan(temperature) || isnan(humidity) || temperature == 0 ||
+       humidity == 0) &&
+      tempFailCounter < maxTries) {
+    Serial.println("Failed to read from DHT sensor, retrying...");
+    handler_errors(0x63); // ErrT
     delay(3000);
     tempFailCounter++;
     return; // Early exit to prevent further execution
   }
 
-  // Handle temperature failure if the counter exceeds limit
-  if (tempFailCounter >= 10) {
+  // If the unchanged count exceeds the threshold, trigger the failure handler
+  if (tempFailCounter >= maxTries) {
+    Serial.println("Temperature sensor failure!");
+    handler_errors(0x39);
+    delay(3000);
+    Serial.println("Entering temperature failure handler...");
     handler_temperature_failure();
+    return;
   }
 
-  // Reset tempFailCounter if reading is successful
+  // Reset tempFailCounter if reading is successful and values have changed
   tempFailCounter = 0;
 
   // Control relay based on temperature threshold
@@ -101,13 +109,6 @@ void loop() {
   handler_screen_messages();
 
   delay(5000); // Short delay to stabilize display
-}
-
-// Show personalized error messages
-void displayError(uint8_t errorNumber) {
-  // "E", "r", "r", (param...)
-  const uint8_t errorMessages[] = {0x79, 0x50, 0x50, errorNumber};
-  display.setSegments(errorMessages, 4, 0);
 }
 
 // Control relay based on temperature thresholds
