@@ -5,9 +5,9 @@
         "source.fixAll.eslint": "always"
     },
     "[ino]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.defaultFormatter": "xaver.clang-format",
     },
     "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",}
-
+        "editor.defaultFormatter": "xaver.clang-format",
+    }
 }
